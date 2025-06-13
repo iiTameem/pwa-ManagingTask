@@ -1,0 +1,452 @@
+/* Task Manager PWA - Modern and Clean Styles */
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Add Task Section */
+.add-task {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+#taskInput:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+#taskInput::placeholder {
+    color: #9ca3af;
+}
+
+#addBtn {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 0.875rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+#addBtn:hover {
+    background: #4338ca;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+#addBtn:active {
+    transform: translateY(0);
+}
+
+/* Tasks Container */
+.tasks-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tasks-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(249, 250, 251, 0.8);
+}
+
+.tasks-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.clear-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+/* Task List */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #f3f4f6;
+    transition: all 0.2s ease;
+    gap: 1rem;
+}
+
+.task-item:hover {
+    background: rgba(249, 250, 251, 0.8);
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item.completed {
+    opacity: 0.6;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #6b7280;
+}
+
+/* Task Checkbox */
+.task-checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.task-checkbox:hover {
+    border-color: #4f46e5;
+    background: rgba(79, 70, 229, 0.05);
+}
+
+.task-checkbox.checked {
+    background: #4f46e5;
+    border-color: #4f46e5;
+    color: white;
+}
+
+/* Task Text */
+.task-text {
+    flex: 1;
+    font-size: 1rem;
+    color: #374151;
+    word-break: break-word;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    opacity: 0.6;
+    flex-shrink: 0;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+    background: rgba(239, 68, 68, 0.1);
+    transform: scale(1.1);
+}
+
+/* Empty State */
+.empty-state {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+.empty-state p {
+    margin: 0;
+}
+
+/* Install Prompt */
+.install-prompt {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 90%;
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+
+.install-prompt.hidden {
+    display: none;
+}
+
+.install-prompt p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #374151;
+}
+
+.install-prompt button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.install-prompt button:hover {
+    background: #4338ca;
+}
+
+.install-prompt button:last-child {
+    background: #6b7280;
+}
+
+.install-prompt button:last-child:hover {
+    background: #4b5563;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem 0.5rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .add-task {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    #taskInput {
+        width: 100%;
+    }
+    
+    #addBtn {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .tasks-header {
+        padding: 1rem;
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+    
+    .task-item {
+        padding: 0.875rem 1rem;
+    }
+    
+    .install-prompt {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        transform: none;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .install-prompt button {
+        width: 100%;
+    }
+}
+
+/* Dark mode support (if system preference) */
+@media (prefers-color-scheme: dark) {
+    .add-task,
+    .tasks-container {
+        background: rgba(31, 41, 55, 0.95);
+        color: #f9fafb;
+    }
+    
+    .tasks-header {
+        background: rgba(17, 24, 39, 0.8);
+        border-bottom-color: #374151;
+    }
+    
+    .tasks-header h2 {
+        color: #f9fafb;
+    }
+    
+    .task-item {
+        border-bottom-color: #374151;
+    }
+    
+    .task-item:hover {
+        background: rgba(17, 24, 39, 0.8);
+    }
+    
+    .task-text {
+        color: #f3f4f6;
+    }
+    
+    .task-checkbox {
+        border-color: #6b7280;
+    }
+    
+    #taskInput {
+        background: #374151;
+        border-color: #4b5563;
+        color: #f9fafb;
+    }
+    
+    #taskInput::placeholder {
+        color: #9ca3af;
+    }
+    
+    .empty-state {
+        color: #9ca3af;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .install-prompt,
+    .clear-btn,
+    .delete-btn,
+    #addBtn {
+        display: none;
+    }
+    
+    .add-task {
+        display: none;
+    }
+    
+    .tasks-container {
+        background: white;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4f46e5">
+    <title>Simple Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiM0ZjQ2ZTUiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik05IDEyTDExIDE0TDE1IDEwTTIxIDEyQzIxIDE2Ljk3MDYgMTYuOTcwNiAyMSAxMiAyMUM3LjAyOTQ0IDIxIDMgMTYuOTcwNiAzIDEyQzMgNy4wMjk0NCA3LjAyOTQ0IDMgMTIgM0MxNi45NzA2IDMgMjEgNy4wMjk0NCAyMSAxMloiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4KPC9zdmc+">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Task Manager</h1>
+            <p>A simple PWA to manage your daily tasks</p>
+        </header>
+
+        <main>
+            <div class="add-task">
+                <input type="text" id="taskInput" placeholder="Add a new task..." maxlength="50">
+                <button id="addBtn">Add Task</button>
+            </div>
+
+            <div class="tasks-container">
+                <div class="tasks-header">
+                    <h2>Your Tasks</h2>
+                    <button id="clearBtn" class="clear-btn">Clear All</button>
+                </div>
+                <ul id="taskList" class="task-list"></ul>
+                <div id="emptyState" class="empty-state">
+                    <p>🎉 No tasks yet! Add one above to get started.</p>
+                </div>
+            </div>
+        </main>
+
+        <div id="installPrompt" class="install-prompt hidden">
+            <p>📱 Install this app on your device for quick access!</p>
+            <button id="installBtn">Install App</button>
+            <button id="dismissBtn">Maybe Later</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
